@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web3 Career Job Listings</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>Web3 Career Job Listings</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Compensation</th>
+                    <th>Posted Time</th>
+                    <th>Job Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in jobs %}
+                <tr>
+                    <td>{{ job.Title }}</td>
+                    <td>{{ job.Company }}</td>
+                    <td>{{ job.Location }}</td>
+                    <td>{{ job.Compensation }}</td>
+                    <td>{{ job['Posted Time'] }}</td>
+                    <td><a href="{{ job['Job Link'] }}" target="_blank">View Job</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
